@@ -1,0 +1,39 @@
+### Web-Applikation für ein Kursverwaltungssystem
+ 
+#### Aufgabe:
+Entwickeln Sie eine Web-Applikation zur Verwaltung von Kursen, Dozenten und Teilnehmern in einem Schulungssystem. Die Applikation soll eine Datenbank enthalten, die Entitäten mit **1:1**, **1:n** und **n:m** Beziehungen modelliert. Sie sollen für die Erstellung des Backends und Frontends geeignete Technologien verwenden.
+ 
+#### Anforderungen:
+ 
+1. **Entitäten & Beziehungen:**
+   - **Dozenten (1:1 Beziehung mit Dozentenprofil)**
+     - Jeder Dozent hat ein Profil, in dem persönliche Informationen wie Fachgebiet, Qualifikationen und Kontaktdaten hinterlegt sind.
+   - **Kurse (1:n Beziehung zwischen Dozenten und Kursen)**
+     - Ein Dozent kann mehrere Kurse unterrichten, aber ein Kurs wird immer nur von einem Dozenten unterrichtet.
+   - **Teilnehmer und Kurse (n:m Beziehung)**
+     - Ein Teilnehmer kann sich für mehrere Kurse anmelden, und ein Kurs kann mehrere Teilnehmer haben.
+ 
+2. **Datenbankstruktur:**
+   - Erstellen Sie die Tabellen für Dozenten, Dozentenprofile, Kurse und Teilnehmer.
+   - Setzen Sie die entsprechenden Fremdschlüssel und Indizes für die Beziehungen (1:1, 1:n, n:m) zwischen den Tabellen.
+ 
+3. **Funktionen der Web-Applikation:**
+   - **Dozentenverwaltung**: CRUD (Create, Read, Update, Delete) für Dozenten und Dozentenprofile.
+   - **Kursverwaltung**: Dozenten können neue Kurse erstellen und verwalten.
+   - **Teilnehmerverwaltung**: Teilnehmer können sich für Kurse anmelden und abmelden.
+   - **Kursübersicht**: Teilnehmer können sich eine Übersicht der verfügbaren Kurse ansehen und sich für diese anmelden.
+ 
+4. **Technische Anforderungen:**
+   - Wählen Sie geeignete Technologien für das Backend und Frontend.
+   - Die Applikation soll über eine API kommunizieren.
+   - Authentifizierung: Implementieren Sie eine einfache Authentifizierung für Dozenten und Teilnehmer (Login).
+ 
+5. **Bonus (optional):**
+   - Implementieren Sie eine Funktion, um eine Kursbewertung durch Teilnehmer zu ermöglichen.
+   - Fügen Sie eine Benachrichtigungsfunktion hinzu, die Teilnehmer über bevorstehende Kurse informiert.
+ 
+#### Bewertungskriterien:
+- Saubere Implementierung der 1:1, 1:n und n:m Beziehungen in der Datenbank.
+- Funktionalität und Benutzerfreundlichkeit der Weboberfläche.
+- Codequalität (Lesbarkeit, Struktur, Kommentare).
+- Nutzung von Best Practices (z.B. Sicherheit bei der Authentifizierung).

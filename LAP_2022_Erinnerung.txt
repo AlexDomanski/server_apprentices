@@ -1,0 +1,149 @@
+Praktischer Teil der LAP für Applikationsentwickler-Coding
+April 2022 
+-------------
+Prüfarbeiten in
+Datenbank
+Software
+
+Info
+Man muss selbstständig die Software und die Sprachen auswählen.
+Die Software kann vor Ort heruntergeladen werden oder per selbstmitgebrachten USB-Stick installiert werden.
+Das Internet ist frei verfügbar und man darf Lehrbücher ebenfalls verwenden.
+Man darf sich nirgends im Internet anmelden.
+Toilettengänge sind bloß einzeln erlaubt und Handys sind abzugeben.
+Jeder Schritt hat Punkte und insgesamt braucht man mindestens 25 bei beiden Prüfarbeiten, um positiv zu sein.
+
+Zeit
+Für beide Prüfarbeiten hat man ca. 3,5 Stunden Zeit. 
+Wenn die Prüfung von 8 Uhr bis 12 Uhr dauert, dann soll der Ausdruck der Dokumentation schon um 11:30 Uhr fertig sein.
+Der Code muss normalerweise nicht gedruckt werden.
+Die restliche halbe Stunde ist die Zeit, dass die Prüfer kurz mit dir über deine Abgabe reden.
+Beim früheren Fertigwerden kann man früher gehen.
+Es gibt ca. eine Stunde Pause zwischen den zwei Prüfarbeiten.
+
+Empfehlung
+Softwaresetups auf einem USB-Stick mitbringen, um Downloads zu vermeiden.
+Softwareemfehlungen:
+- MySQL Workbench (zum Erstellen von ER-Diagrammen, zum Ausführen von SQL-Skripten)
+- XAMPP (zum starten eines lokalen Servers)
+- VSCode (als Text- und Code-Editor)
+Windows 10 und Office sind vorinstalliert. Deshalb sind Texteditor, Snippingtool und Word gleich verwendbar.
+Auf einem Github-Konto ein öffentliches Repository erstellen, mit Hilfreichen Code-Schnipseln, Informationen, etc..
+Github erlaubt auch das Hochladen von Bildern und anderen Dateiarten.
+
+-----------------------------
+
+Prüfarbeit: Datenbank
+
+Dokumentiere deine Schritte.
+0.
+Nenne deine verwendeten Programme.
+Erkläre deine Programmwahlen.
+
+1.
+Erstelle ein ER-Diagramm für die Datenbank eines Fahrradverleih-Service. 
+Schreibe die passenden Attribute dazu. 
+Das Diagramm soll in der 3. Normalform sein. Relationen wie 1:n, n:m, n:1 sollen markiert werden.
+
+In Linz kann überall ein Fahrrad ausgeliehen und wieder abgestellt werden.
+
+Das Fahrrad hat einen einzigartigen Pin (zB. 89872), mit dem es immer entsperrt werden kann. 
+Es hat auch einen Typ und Hersteller.
+
+Das Ausleihen kostet immer 1€ und jede weitere Minute kostet 30 Cent.
+
+Jeder Kunde muss sich mit dem Vor- und Nachnamen, seiner Adresse und Telefonnumer registrieren.
+Er hat eine Guthabenkarte. Jede Guthabenkarte hat einen einzigartigen Pin (zB 23QF).
+
+Diese Daten sollen beinhaltet sein
+[Bilder mit zusätzlichen Daten:
+Geburtsjahr, Registrierdatum, Baujahr, Adresse, Ort, Platz, Abrechnung, Guthaben, PIN, etc.]
+
+Beim Ausleihen des Fahrrads, wird die aktuellen GPS Koordinaten gespeichert (Longitude, Latitude, jeweils zB. 0,3453466576567).
+
+Eine Abbrechnung soll wie dieses Schema aussehen:
+Guthaben vor dem Ausleihen:  20€
+Kosten für das Ausleihen:    -7,60€
+Neues Guthaben:		     12,40€
+
+Die Jahresabrechnung soll für jeden Kunden einsehbar sein. Beispielsweise soll ein Kunde sehen können, dass er ein Fahrrad fünf Mal ausgliehen hat und dafür insgesamt 50,20€ ausgegeben hat.
+
+2.
+Erstelle eine Datenbank zu diesem ER-Diagramm. Fülle jede Tabelle mit mindestens drei Einträgen.
+
+3.
+Teste deine Datenbank ausführlich.
+Beispielsweise siehe nach:
+Welches Fahrrad am öftesten ausgeliehen wurde.
+Was der größte Betrag für eine Fahrt war.
+Welcher Kunde am meisten im letzten Jahr ausgegeben hat.
+etc.
+Schreibe deine SQL-Befehle dafür auf.
+
+
+Notizen:
+Auf XAMPP müssen sowohl Apache als auch MySQL laufen, um auf localhost/phpmyAdmin die DB sehen zu können.
+Je ausführlicher das ER-Diagramm, desto länger dauert das einfügen der Daten.
+Automatische Foreign-Key-Setzung vom MySQL ER-Diagramm macht die Keys automatisch zu INT, auch wenn das nicht der Fall ist -> Error beim CREATE
+MySQL Workbench hat "Forward Engineering", wodurch man mit dem ER-Diagramm automatisch ein CREATE kreieren kann. Dafür muss man aber normalerweise Module Model > Model Options > MySQL > Change Target MySQL Version to 5.7
+Stell sicher, dass notwendige Daten mit NOT NULL gesetzt werden und dass du all deine Schritte erklären kannst.
+Falls irgendetwas nicht funktioniert, ist es besser das zu dokumentieren und dann beim nächsten Schritt weiterzuarbeiten, als ob es funktioniert. Also, beim Testen musst du keine Ausgaben haben, sondern die passenden SQL-Befehle sind gefragt.
+
+
+-----------------------------------
+Prüfarbeit: Software
+
+1.
+Erstelle eine Webseite.
+Man soll per Dropdown-Element alle Datenbanken auf deinem Server und deren Tabellen auswählen können.
+Sie sollen als DATENBANKNAME.TABELLENNAME angegeben werden.
+[Bild von wie das Dropdown-Menü aussehen soll]
+
+2.
+Nach der Auswahl, soll man alle Felder der Tabelle angezeigt bekommen und ein Textfeld unter jedem haben.
+Es soll einen Submit Button geben ohne Funktion.
+[Bild von wie die Ausgabe aussehen soll]
+
+3.
+Teste deine Webseite ausführlich und dokumentiere die Schritte.
+Achte darauf, dass dein Code richtig formatiert ist.
+Schreibe Kommentare im Code, die die einzelnen Schritte erklären.
+
+Notizen:
+php Array von SQL-Abfrage muss mit mysql_fetch_array gemacht werden, wenn man $array[0] statt $array["columntitle"] nutzen möchte
+ein anderes Team musste einen QR-Code von deren Seite erstellen, was angeblich javascript benötigte
+Hier musste der Code mitausgedruckt werden.
+
+
+---------------------------------------------------------
+Fachgespräch zur LAP für Applikationsentwickler-Coding
+April 2022 
+------------
+Fachgespräch:
+Info
+Themenkatalog zu "Applikationsentwickler-Coding" von der WKO existiert online.
+Das Fachgesräch dauert zwischen 15-20 Minuten
+Man wird nach alphabetischer Reihenfolge drangenommen. Man kann bitten, früher drangenommen zu werden.
+Man wird einzeln von zwei Prüfern und einem ? befragt.
+Nach jeder zweiten Person machen die Prüfer eine Pause.
+Anfänglich wird nach deiner Ausbildung und deinem Unternehmen gefragt. Die Fragen werden darauf ein angepasst. (ca 3-4 Minuten)
+Man erfährt das Ergebnis der gesamten LAP und der Teilbereiche erst, nachdem jeder dran war.
+Nach der Zeugnisverleihung kann man fragen, wie es zur Note kam. 
+
+Ein paar Themenbereiche, die gefragt wurden:
+HTML Grundstruktur (aufzeichnen)
+Domainaufteilung erklären (aufzeichnen)
+Bubble- und Quicksort
+Wünsche von Kunden wurden gesagt und du musstest eine passende Datenbankstruktur nennen
+Datentypen
+FIFO/LIFO Queue Stack -> Drucker ist ein gutes Beispiel für eine Queue
+Wozu Versionen gut sind
+Backups
+SQL und Datenbanktypen
+Frameworks
+Hardware eines PCs (+CPU detailierter) erklären
+USB und Speicher
+Programmiersprachen
+Industrie 2.0 und weiter
+SCRUM und Wasserfallprinzip
+
